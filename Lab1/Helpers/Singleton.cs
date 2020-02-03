@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Lab1.Models;
 
-namespace Lab0.Helpers
+namespace Lab1.Helpers
 {
     public class Singleton
     {
