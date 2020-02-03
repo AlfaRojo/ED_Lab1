@@ -5,17 +5,12 @@ using System.Threading.Tasks;
 
 namespace Lab1.Models
 {
-	public class Tree<T>
+	public class Node <T>
 	{
-		private Node<T> Root;
-
-		public void Insert()
-		{
-
-		}
-		//public T Find()
-		//{
-
-		//}
+		int id;
+		int father;
+		bool isLeaf = true;
+		Node<T>[] children;
+		T[] value;
 	}
 }
