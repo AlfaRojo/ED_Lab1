@@ -19,11 +19,13 @@ namespace Lab1.Controllers
         }
         // GET: api/Soda/5
         [HttpGet]
-        public ActionResult<Tree<Node<int>>> Get() =>
+
+
+        public ActionResult<Tree<Soda>> Get =>
             _serviSoda.Get();
 
         [HttpGet("{id:lenght(24)}", Name = "GetSoda")]
-        public ActionResult<Tree<Node<int>>> Get(string id)
+        public ActionResult<Tree<Soda> Get(string id)
         {
             var soda = _serviSoda.Get(id);
             if (soda == null)
@@ -35,7 +37,7 @@ namespace Lab1.Controllers
 
         // POST: api/Soda
         [HttpPost]
-        public ActionResult<Tree<Node<int>>> Post(Node<int> Drink)
+        public ActionResult<Tree<Soda> Post(Soda Drink)
         {
             _serviSoda.Post(Drink);
             return Ok();
