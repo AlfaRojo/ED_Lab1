@@ -9,21 +9,21 @@ namespace Lab1.Services
 {
     public class ServiceSoda
     {
-        public List<Soda> Get()
+        public List<Soda> Get()//Devolver valor individual
         {
             var mySoda = new List<Soda>();
+            
+            return mySoda;
+        }
+        public Tree<Soda> Get(string ID)//Devolver todos los valores
+        {
+            var mySoda = new Tree<Soda>();
 
             return mySoda;
         }
         public void Post(Soda onTree)
         {
             Singleton.Instance.thisTree.Insert(onTree);
-        }
-        public Tree<Soda> Get(string ID)
-        {
-            var mySoda = new Tree<Soda>();
-
-            return mySoda;
         }
     }
 }

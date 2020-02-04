@@ -15,21 +15,10 @@ namespace Lab1.Controllers
             _serviSoda = serviSoda;
         }
 
-        // GET: api/Soda/5
+        // GET: api/Soda
         [HttpGet]
         public ActionResult<List<Soda>> Get =>
             _serviSoda.Get();
-
-        //[HttpGet("{id:lenght(24)}", Name = "GetSoda")]
-        //public ActionResult<Tree<Soda> Get(string id)
-        //{
-        //    var soda = _serviSoda.Get(id);
-        //    if (soda == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok();
-        //}
 
         // POST: api/Soda
 
