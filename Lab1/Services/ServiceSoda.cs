@@ -9,14 +9,14 @@ namespace Lab1.Services
 {
     public class ServiceSoda
     {
-        public Tree<Node<int>> Get()
+        public Tree<Soda> Get()
         {
-            var mySoda = new Tree<Node<int>>();
+            var mySoda = new Tree<Soda>();
 
 
             return mySoda;
         }
-        public void Post(Node<int> onTree)
+        public void Post(Soda onTree)
         {
             Singleton.Instance.thisTree.Insert(onTree);
         }

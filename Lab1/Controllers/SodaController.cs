@@ -19,8 +19,6 @@ namespace Lab1.Controllers
         }
         // GET: api/Soda/5
         [HttpGet]
-
-
         public ActionResult<Tree<Soda>> Get =>
             _serviSoda.Get();
 
@@ -37,7 +35,7 @@ namespace Lab1.Controllers
 
         // POST: api/Soda
         [HttpPost]
-        public ActionResult<Tree<Soda> Post(Soda Drink)
+        public ActionResult<Tree<Soda>> Post(Soda Drink)
         {
             _serviSoda.Post(Drink);
             return Ok();
