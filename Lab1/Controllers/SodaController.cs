@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Lab1.Models;
 using Lab1.Services;
 
@@ -20,6 +21,17 @@ namespace Lab1.Controllers
         [HttpGet]
         public ActionResult<Tree<Node<int>>> Get() =>
             _serviSoda.Get();
+
+        [HttpGet("{id:lenght(24)}", Name = "GetSoda")]
+        public ActionResult<Tree<Node<int>>> Get(string id)
+        {
+            var soda = _serviSoda.Get(id);
+            if (soda == null)
+            {
+                return NotFound();
+            }
+            return Ok();
+        }
 
         // POST: api/Soda
         [HttpPost]

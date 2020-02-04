@@ -20,5 +20,6 @@ namespace Lab1.Services
         {
             Singleton.Instance.thisTree.Insert(onTree);
         }
+        //Implementar GET Global
     }
 }
