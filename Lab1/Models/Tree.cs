@@ -11,7 +11,7 @@ namespace Lab1.Models
 
 		public void Insert(Soda myNode)
 		{
-
+			//Insertar del arbol
 		}
 		//public T Find()
 		//{

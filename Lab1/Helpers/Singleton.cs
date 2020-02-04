@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Lab1.Models;
+﻿using Lab1.Models;
 
 namespace Lab1.Helpers
 {

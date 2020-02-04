@@ -9,10 +9,9 @@ namespace Lab1.Services
 {
     public class ServiceSoda
     {
-        public Tree<Soda> Get()
+        public List<Soda> Get()
         {
-            var mySoda = new Tree<Soda>();
-
+            var mySoda = new List<Soda>();
 
             return mySoda;
         }
@@ -20,6 +19,11 @@ namespace Lab1.Services
         {
             Singleton.Instance.thisTree.Insert(onTree);
         }
-        //Implementar GET Global
+        public Tree<Soda> Get(string ID)
+        {
+            var mySoda = new Tree<Soda>();
+
+            return mySoda;
+        }
     }
 }
