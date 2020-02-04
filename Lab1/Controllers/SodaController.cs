@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Lab1.Models;
 using Lab1.Services;
 
 namespace Lab1.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class SodaController : ControllerBase
     {
@@ -16,16 +18,15 @@ namespace Lab1.Controllers
         }
         // GET: api/Soda/5
         [HttpGet]
-        public ActionResult<List<Tree>> Get() =>
+        public ActionResult<Tree<Node<int>>> Get() =>
             _serviSoda.Get();
 
         // POST: api/Soda
         [HttpPost]
-        public ActionResult<> Post(Soda Drink)
+        public ActionResult<Tree<Node<int>>> Post(Node<int> Drink)
         {
             _serviSoda.Post(Drink);
             return Ok();
-
         }
     }
 }

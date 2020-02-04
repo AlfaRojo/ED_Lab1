@@ -16,5 +16,6 @@ namespace Lab1.Helpers
                 }
             }
         }
+        public Tree<Node<int>> thisTree = new Tree<Node<int>>();
     }
 }

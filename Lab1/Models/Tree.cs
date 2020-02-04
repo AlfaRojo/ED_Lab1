@@ -9,7 +9,7 @@ namespace Lab1.Models
 	{
 		private Node<T> Root;
 
-		public void Insert()
+		public void Insert(Node<int> myNode)
 		{
 
 		}
