@@ -17,8 +17,11 @@ namespace Lab1.Controllers
 
         // GET: api/Soda
         [HttpGet]
-        public ActionResult<List<Soda>> Get =>
-            _serviSoda.Get();
+        public ActionResult<List<Soda>> Get()
+        {
+            var listaReturn = _serviSoda.Get();
+            return Ok(listaReturn);
+        }
 
         // POST: api/Soda
 
