@@ -7,29 +7,30 @@ using System.Web;
 
 namespace Lab1.Models
 {
-    public class Node<TKey, T>
+    public class Node<TK, TP>
     {
-        public List<Soda> myInformation { get; set; }
-        public List<int> children { get; set; }
-        public List<TKey> key { get; set; }
-        public int father { get; set; }
-        public int order { get; set; }
-        public int position { get; set; }
+        public List<Index<TK, TP>> myInformation { get; set; }
+        public List<Node<TK, TP>> myNode { get; set; }
+        private int grade;
 
-        public Node(List<Soda> Data, List<int> myChildren, List<TKey> myKey, int myFather, int myOrder, int myPositioin)
+        public Node(int myGrade)
         {
-            this.myInformation = Data;
-            this.children = myChildren;
-            this.key = myKey;
-            this.father = myFather;
-            this.position = myPositioin;
-            this.order = myOrder;
+            this.grade = myGrade;
+            myNode = new List<Node<TK, TP>>();
+            myInformation = new List<Index<TK, TP>>();
+
         }
-        public Node()
+        public bool isleaf
         {
-            myInformation = new List<Soda>();
-            children = new List<int>();
-            key = new List<TKey>();
+            get { return this.myNode.Count == 0; }
+        }
+        public bool MaxValues
+        {
+            get { return this.myInformation.Count == (2 * this.grade) - 1; }
+        }
+        public bool MinValues
+        {
+            get { return this.myInformation.Count == this.grade - 1; }
         }
     }
 }

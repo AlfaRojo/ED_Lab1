@@ -5,36 +5,33 @@ using System.Threading.Tasks;
 
 namespace Lab1.Models
 {
-	public class Tree<T> where T : IComparable
-	{
-		private Node<T> Root;
+    public class Tree<TK, TP> where TK : IComparable<TK>
+    {
+        private Comparison<IComparable> Comparer = ComparerElements;
+        public Node<TK, TP> root { get; private set; }
+        public int Grade { get; private set; }
+        public int High { get; private set; }
 
-		private Comparison<IComparable> Comparer = ComparerElements;
+        public void Insert(Soda myNode)
+        {
 
-		public void Insert(Soda myNode)
-		{
-
-		}
-		public T[] Find(Delegate comparer, T[] Value)
-		{
-			for (int i = 0; i < Value.Length; i++)
-			{
-				for (int j = 0; j < Value.Length; j++)
-				{
-					if ((int)Comparer.DynamicInvoke(Value[i], Value[j])== 0)
-					{
-						var Aux = Value[i];
-						Value[i] = Value[j];
-						Value[j] = Aux;
-					}
-				}
-			}
-			return Value;
-
-		}
-		private static int ComparerElements(IComparable value, IComparable sInformacion)
-		{
-			return value.CompareTo(sInformacion);
-		}
-	}
+        }
+        public Index<TK, TP> AllSerch(TK ID)
+        {
+            return this.Search(this.root, ID);
+        }
+        private Index<TK, TP> Search(Node<TK, TP> tempNode, TK ID)
+        {
+            int i = tempNode.myInformation.TakeWhile(Index => ID.CompareTo(Index.ID) > 0).Count();
+            if (i < tempNode.myInformation.Count && tempNode.myInformation[i].ID.CompareTo(ID)==0)
+            {
+                return tempNode.myInformation[i];
+            }
+            return tempNode.isleaf ? null : this.Search(tempNode.myNode[i], ID);
+        }
+        private static int ComparerElements(IComparable value, IComparable sInformacion)
+        {
+            return value.CompareTo(sInformacion);
+        }
+    }
 }
