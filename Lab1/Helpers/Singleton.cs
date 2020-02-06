@@ -1,4 +1,9 @@
-﻿using Lab1.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Lab1.Models;
+
 
 namespace Lab1.Helpers
 {
@@ -15,6 +20,6 @@ namespace Lab1.Helpers
                 }
             }
         }
-        public Tree<Soda> thisTree = new Tree<Soda>();
+        public Tree<int, int> thisTree = new Tree<int, int>(5);
     }
 }

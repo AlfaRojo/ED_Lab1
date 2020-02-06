@@ -26,7 +26,7 @@ namespace Lab1.Controllers
         // POST: api/Soda
 
         [HttpPost]
-        public ActionResult<Tree<Soda>> Post(Soda Drink)
+        public ActionResult<List<Soda>> Post(List<Soda> Drink)
         {
             _serviSoda.Post(Drink);
             return Ok();

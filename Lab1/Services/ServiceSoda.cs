@@ -15,15 +15,15 @@ namespace Lab1.Services
             
             return mySoda;
         }
-        public Tree<Soda> Get(string ID)//Devolver todos los valores
+        public List<Soda> Get(string ID)//Devolver todos los valores
         {
-            var mySoda = new Tree<Soda>();
+            var mySoda = new List<Soda>();
 
             return mySoda;
         }
-        public void Post(Soda onTree)
+        public void Post(List<Soda> onTree)
         {
-            Singleton.Instance.thisTree.Insert(onTree);
+
         }
     }
 }
