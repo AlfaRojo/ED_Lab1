@@ -24,6 +24,15 @@ namespace Lab1.Controllers
             return Ok(listaReturn);
         }
 
+        // Get: api/Soda
+        [HttpGet]
+        [Route("{id?}")]
+        public Soda Get (string id)
+        {
+            int po = Singleton.Instance.thisTree.AllSerch(id).Pointer;
+            return Singleton.Instance.noList[po];
+        }
+
         // Post: api/Soda
         [HttpPost]
         public Soda Post ([FromBody] Soda soda)
@@ -31,6 +40,7 @@ namespace Lab1.Controllers
             if (Singleton.Instance.aux !=0)
             {
                 Singleton.Instance.thisTree.Insert(soda.Name, Singleton.Instance.pointer);
+                Singleton.Instance.noList.Add(Singleton.Instance.pointer, soda);
                 Singleton.Instance.pointer++;
             }
             Singleton.Instance.aux++;

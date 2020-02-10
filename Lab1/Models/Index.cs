@@ -11,5 +11,6 @@ namespace Lab1.Models
         {
             return this.ID.Equals(other.ID) && this.Pointer.Equals(other.Pointer);
         }
+
     }
 }

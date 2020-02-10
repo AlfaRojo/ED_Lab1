@@ -23,5 +23,7 @@ namespace Lab1.Helpers
         public Tree<string, int> thisTree = new Tree<string, int>(5);
         public int pointer = 0;
         public int aux = 0;
+        public List<Soda> nodeList = new List<Soda>();
+        public Dictionary<int, Soda> noList { get; set; }
     }
 }
