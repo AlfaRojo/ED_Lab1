@@ -28,7 +28,12 @@ namespace Lab1.Controllers
         [HttpPost]
         public Soda Post ([FromBody] Soda soda)
         {
-           // Singleton.Instance.thisTree.Insert();
+            if (Singleton.Instance.aux !=0)
+            {
+                Singleton.Instance.thisTree.Insert(soda.Name, Singleton.Instance.pointer);
+                Singleton.Instance.pointer++;
+            }
+            Singleton.Instance.aux++;
             return soda;
         }
 

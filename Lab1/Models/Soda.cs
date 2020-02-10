@@ -19,6 +19,7 @@ namespace Lab1.Models
 		};
 		public int CompareTo(object obj)
 		{
+			var vCompare = (Soda)obj;
 			return this.Name.CompareTo(((Soda)obj).Name);
 		}
 	}

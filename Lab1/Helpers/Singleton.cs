@@ -20,6 +20,8 @@ namespace Lab1.Helpers
                 }
             }
         }
-        public Tree<int, int> thisTree = new Tree<int, int>(5);
+        public Tree<string, int> thisTree = new Tree<string, int>(5);
+        public int pointer = 0;
+        public int aux = 0;
     }
 }
